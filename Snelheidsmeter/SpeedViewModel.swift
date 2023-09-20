@@ -66,13 +66,12 @@ class SpeedViewModel {
     
         // If the speedDifference was negative, return the result but negative.
         // Otherwise return as normal
-        if speedDifference < 0 {
-            print("Result: ", -result)
-            return -result
-        } else {
-            print("Result: ", result)
-            return result
-        }
+        let actualResult = speedDifference < 0 ? -result : result
+        print("Result: ", actualResult)
+        
+        // Check whether the result is NaN, otherwise return
+        // the result as normal
+        return actualResult.isNaN ? 0 : actualResult
     }
     
     @MainActor

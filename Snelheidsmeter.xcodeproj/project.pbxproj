@@ -61,14 +61,10 @@
 		8970D7382ABB495300F0D087 /* Snelheidsmeter */ = {
 			isa = PBXGroup;
 			children = (
-				8970D7532ABB817B00F0D087 /* Extensions */,
 				8970D7522ABB816F00F0D087 /* Views */,
 				8970D7392ABB495300F0D087 /* SnelheidsmeterApp.swift */,
 				8970D73B2ABB495300F0D087 /* ContentView.swift */,
 				8970D74C2ABB4C8300F0D087 /* SpeedViewModel.swift */,
-				8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */,
-				8970D7502ABB812700F0D087 /* AccelerationView.swift */,
-				8970D74E2ABB7B1200F0D087 /* AccelerationSensorView.swift */,
 				8970D73D2ABB495600F0D087 /* Assets.xcassets */,
 				8970D73F2ABB495600F0D087 /* Preview Content */,
 			);
@@ -86,15 +82,11 @@
 		8970D7522ABB816F00F0D087 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8970D74E2ABB7B1200F0D087 /* AccelerationSensorView.swift */,
+				8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */,
+				8970D7502ABB812700F0D087 /* AccelerationView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8970D7532ABB817B00F0D087 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

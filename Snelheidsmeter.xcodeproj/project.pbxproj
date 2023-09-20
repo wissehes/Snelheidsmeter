@@ -11,6 +11,9 @@
 		8970D73C2ABB495300F0D087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D73B2ABB495300F0D087 /* ContentView.swift */; };
 		8970D73E2ABB495600F0D087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8970D73D2ABB495600F0D087 /* Assets.xcassets */; };
 		8970D7412ABB495600F0D087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8970D7402ABB495600F0D087 /* Preview Assets.xcassets */; };
+		8970D7492ABB4BBB00F0D087 /* AsyncLocationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8970D7482ABB4BBB00F0D087 /* AsyncLocationKit */; };
+		8970D74B2ABB4BDF00F0D087 /* SpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */; };
+		8970D74D2ABB4C8300F0D087 /* SpeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D74C2ABB4C8300F0D087 /* SpeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		8970D73B2ABB495300F0D087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8970D73D2ABB495600F0D087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8970D7402ABB495600F0D087 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedView.swift; sourceTree = "<group>"; };
+		8970D74C2ABB4C8300F0D087 /* SpeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8970D7492ABB4BBB00F0D087 /* AsyncLocationKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,8 @@
 			children = (
 				8970D7392ABB495300F0D087 /* SnelheidsmeterApp.swift */,
 				8970D73B2ABB495300F0D087 /* ContentView.swift */,
+				8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */,
+				8970D74C2ABB4C8300F0D087 /* SpeedViewModel.swift */,
 				8970D73D2ABB495600F0D087 /* Assets.xcassets */,
 				8970D73F2ABB495600F0D087 /* Preview Content */,
 			);
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = Snelheidsmeter;
+			packageProductDependencies = (
+				8970D7482ABB4BBB00F0D087 /* AsyncLocationKit */,
+			);
 			productName = Snelheidsmeter;
 			productReference = 8970D7362ABB495300F0D087 /* Snelheidsmeter.app */;
 			productType = "com.apple.product-type.application";
@@ -104,13 +115,17 @@
 			};
 			buildConfigurationList = 8970D7312ABB495300F0D087 /* Build configuration list for PBXProject "Snelheidsmeter" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = nl;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = 8970D72D2ABB495300F0D087;
+			packageReferences = (
+				8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */,
+			);
 			productRefGroup = 8970D7372ABB495300F0D087 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8970D74D2ABB4C8300F0D087 /* SpeedViewModel.swift in Sources */,
 				8970D73C2ABB495300F0D087 /* ContentView.swift in Sources */,
 				8970D73A2ABB495300F0D087 /* SnelheidsmeterApp.swift in Sources */,
+				8970D74B2ABB4BDF00F0D087 /* SpeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +292,13 @@
 				DEVELOPMENT_TEAM = C4HKS39B24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Snelheidsmeter heeft toegang nodig tot je locatie om jouw snelheid te kunnen gebruiken";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +323,13 @@
 				DEVELOPMENT_TEAM = C4HKS39B24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Snelheidsmeter heeft toegang nodig tot je locatie om jouw snelheid te kunnen gebruiken";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AsyncSwift/AsyncLocationKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8970D7482ABB4BBB00F0D087 /* AsyncLocationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */;
+			productName = AsyncLocationKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8970D72E2ABB495300F0D087 /* Project object */;
 }

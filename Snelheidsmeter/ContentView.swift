@@ -12,21 +12,29 @@ struct ContentView: View {
     var vm = SpeedViewModel()
     
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            
-            if vm.isMonitoring {
-                animatingIcon
-                    .frame(width: 50)
-            } else {
-                stillIcon
-                    .frame(width: 50)
+        NavigationStack {
+            VStack(alignment: .center, spacing: 10) {
+                
+                if vm.isMonitoring {
+                    animatingIcon
+                        .frame(width: 50)
+                } else {
+                    stillIcon
+                        .frame(width: 50)
+                }
+                
+                SpeedView(speed: vm.speed)
+                
+                AccelerationView(acceleration: vm.acceleration)
+                
+                controlButton
+                
+//                NavigationLink("Versnellingsmeter") {
+//                    AccelerationView()
+//                }.buttonStyle(.bordered)
             }
-            
-            SpeedView(speed: vm.speed)
-            
-            controlButton
+            .padding()
         }
-        .padding()
     }
     
     var animatingIcon: some View {

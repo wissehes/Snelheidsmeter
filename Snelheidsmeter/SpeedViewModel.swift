@@ -21,25 +21,29 @@ class SpeedViewModel {
         locations.last
     }
     
+    /// Whether the app is currently monitoring the location
     var isMonitoring: Bool = false
     
     var speed: Double {
         guard let speed = location?.speed else { return 0 }
-        
-        if speed < 0 {
-            return 0
-        } else {
-            return speed
-        }
+
+        // Return 0 if the speed is less than 0
+        return speed < 0 ? 0 : speed
     }
     
+    /**
+     Stored monitoring task
+     */
     var locationMonitoringTask: Task<Void, Never>?
     
-    func setMonitoring(_ value: Bool) {
+    /**
+     Helper function to set the monitoring status with an animation
+     */
+    private func setMonitoring(_ value: Bool) {
         withAnimation { self.isMonitoring = value }
     }
     
-    /// Acceleration in metersper second squared
+    /// Acceleration in meters per second squared
     /// (Delta V / Delta T) ^2
     /// Where V = speed and T = time
     var acceleration: Double? {

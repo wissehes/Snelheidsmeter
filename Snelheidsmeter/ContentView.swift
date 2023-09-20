@@ -28,10 +28,6 @@ struct ContentView: View {
                 AccelerationView(acceleration: vm.acceleration)
                 
                 controlButton
-                
-//                NavigationLink("Versnellingsmeter") {
-//                    AccelerationView()
-//                }.buttonStyle(.bordered)
             }
             .padding()
         }
@@ -67,6 +63,7 @@ struct ContentView: View {
                 vm.locationMonitoringTask = Task { await vm.startMonitoring() }
             }
         }.buttonStyle(.borderedProminent)
+            .contentTransition(.symbolEffect(.replace))
             .tint(vm.isMonitoring ? .red : .accentColor)
     }
 }

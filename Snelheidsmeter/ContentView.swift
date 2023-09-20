@@ -13,17 +13,53 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
+            
+            if vm.isMonitoring {
+                animatingIcon
+                    .frame(width: 50)
+            } else {
+                stillIcon
+                    .frame(width: 50)
+            }
+            
             SpeedView(speed: vm.speed)
             
-            Button(vm.isMonitoring ? "Stop volgen" : "Start volgen", systemImage: "location.fill.viewfinder") {
-                if vm.isMonitoring {
-                    vm.locationMonitoringTask?.cancel()
-                } else {
-                    vm.locationMonitoringTask = Task { await vm.startMonitoring() }
-                }
-            }.buttonStyle(.borderedProminent)
+            controlButton
         }
         .padding()
+    }
+    
+    var animatingIcon: some View {
+        Image(systemName: "dot.radiowaves.left.and.right", variableValue: 0.1)
+            .resizable()
+            .symbolRenderingMode(.multicolor)
+            .symbolEffect(.variableColor.iterative)
+            .scaledToFit()
+    }
+    
+    var stillIcon: some View {
+        Image(systemName: "dot.radiowaves.left.and.right", variableValue: 0.1)
+            .resizable()
+            .scaledToFit()
+    }
+    
+    var buttonTitle: String {
+        vm.isMonitoring ? "Stop volgen" : "Start volgen"
+    }
+    
+    var buttonIcon: String {
+        vm.isMonitoring ? "location.slash" : "location.fill.viewfinder"
+    }
+    
+    var controlButton: some View {
+        Button(buttonTitle, systemImage: buttonIcon) {
+            if vm.isMonitoring {
+                vm.locationMonitoringTask?.cancel()
+            } else {
+                vm.locationMonitoringTask = Task { await vm.startMonitoring() }
+            }
+        }.buttonStyle(.borderedProminent)
+            .tint(vm.isMonitoring ? .red : .accentColor)
     }
 }
 

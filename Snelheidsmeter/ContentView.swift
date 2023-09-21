@@ -93,4 +93,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(for: TrackingSession.self)
+        .environment(\.locale, .init(identifier: "nl"))
 }

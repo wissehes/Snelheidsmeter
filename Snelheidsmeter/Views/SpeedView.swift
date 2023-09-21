@@ -11,19 +11,24 @@ struct SpeedView: View {
     
     var speed: Double
     
+    @State private var showMetersPerSecond = false
+    
     let gradient = Gradient(colors: [.green, .orange, .pink])
     let minSpeed: Double = 0
-    let maxSpeed: Double = 200
-    
+    var maxSpeed: Double {
+        showMetersPerSecond ? 20 : 200
+    }
+        
     var formatter: MeasurementFormatter {
         let formatter = MeasurementFormatter()
         formatter.numberFormatter.numberStyle = .decimal
         formatter.numberFormatter.minimumFractionDigits = 2
+        formatter.unitOptions = showMetersPerSecond ? .providedUnit : .naturalScale
         return formatter
     }
     
     var formattedSpeed: String {
-        let measurement = Measurement(value: speed, unit: UnitSpeed.kilometersPerHour)
+        let measurement = Measurement(value: speed, unit: UnitSpeed.metersPerSecond)
         return formatter.string(from: measurement)
     }
     
@@ -34,6 +39,8 @@ struct SpeedView: View {
                     .font(.headline)
                 Text(formattedSpeed)
                     .font(.system(.largeTitle, design: .rounded))
+            }.onTapGesture {
+                showMetersPerSecond.toggle()
             }
             
             Gauge(value: speed, in: minSpeed...maxSpeed) {

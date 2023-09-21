@@ -1,0 +1,76 @@
+{
+  "sourceLanguage" : "nl",
+  "strings" : {
+    "km/h" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km/h"
+          }
+        }
+      }
+    },
+    "Snelheid" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speed"
+          }
+        }
+      }
+    },
+    "Versnelling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceleration"
+          }
+        }
+      }
+    },
+    "Versnelling:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceleration:"
+          }
+        }
+      }
+    },
+    "X: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X: %@"
+          }
+        }
+      }
+    },
+    "Y: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y: %@"
+          }
+        }
+      }
+    },
+    "Z: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z: %@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

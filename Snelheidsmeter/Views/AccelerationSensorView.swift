@@ -16,7 +16,7 @@ struct AccelerationSensorView: View {
     
     var body: some View {
         VStack {
-            Text("Acceleration:")
+            Text("Versnelling:")
             Text("X: \(acceleration?.x.formatted() ?? "?")")
             Text("Y: \(acceleration?.y.formatted() ?? "?")")
             Text("Z: \(acceleration?.z.formatted() ?? "?")")

@@ -10,13 +10,23 @@ import SwiftUI
 import CoreLocation
 import AsyncLocationKit
 import CoreMotion
+import SwiftData
 
 @Observable
 class SpeedViewModel {
     
     private let manager = AsyncLocationManager(desiredAccuracy: .bestForNavigationAccuracy)
+    private var container: ModelContainer? {
+        do {
+            return try ModelContainer(for: TrackingSession.self)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
     
     var locations: [CLLocation] = []
+    var sessionItems: [TrackingSessionItem] = []
     var location: CLLocation? {
         locations.last
     }
@@ -83,6 +93,7 @@ class SpeedViewModel {
         defer {
             self.setMonitoring(false);
             self.locations = []
+            self.sessionItems = []
             // Enable automatic sleep again
             UIApplication.shared.isIdleTimerDisabled = false
         }
@@ -103,6 +114,13 @@ class SpeedViewModel {
             switch locationUpdate {
             case .didUpdateLocations(let locations):
                 withAnimation { self.locations.append(contentsOf: locations) }
+                if let location = locations.last {
+                    self.sessionItems.append(.init(
+                        speed: location.speed,
+                        acceleration: acceleration, 
+                        timestamp: .now
+                    ))
+                }
             case .didPaused:
                 setMonitoring(false)
             case .didResume:

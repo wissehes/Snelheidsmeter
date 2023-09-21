@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.modelContext) private var context
+    
     var vm = SpeedViewModel()
     
     var body: some View {
@@ -28,8 +30,15 @@ struct ContentView: View {
                 AccelerationView(acceleration: vm.acceleration)
                 
                 controlButton
+                
+                NavigationLink {
+                    SessionsView()
+                } label: {
+                    Label("Sessies", systemImage: "square.3.layers.3d")
+                }.buttonStyle(.bordered)
             }
             .padding()
+            .navigationTitle("Snelheid")
         }
     }
     
@@ -58,6 +67,7 @@ struct ContentView: View {
     var controlButton: some View {
         Button(buttonTitle, systemImage: buttonIcon) {
             if vm.isMonitoring {
+                saveSession()
                 vm.locationMonitoringTask?.cancel()
             } else {
                 vm.locationMonitoringTask = Task { await vm.startMonitoring() }
@@ -65,6 +75,19 @@ struct ContentView: View {
         }.buttonStyle(.borderedProminent)
             .contentTransition(.symbolEffect(.replace))
             .tint(vm.isMonitoring ? .red : .accentColor)
+    }
+    
+    /// Saves the session to SwiftData
+    func saveSession() {
+        guard let firstLocation = vm.locations.first, !vm.sessionItems.isEmpty else { return print("No location items...") }
+        
+        let session = TrackingSession(
+            startDate: firstLocation.timestamp,
+            endDate: .now,
+            items: vm.sessionItems
+        )
+        
+        context.insert(session)
     }
 }
 

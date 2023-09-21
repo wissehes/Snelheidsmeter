@@ -19,6 +19,7 @@
 		8970D7572ABC4E5D00F0D087 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8970D7562ABC4E5D00F0D087 /* Localizable.xcstrings */; };
 		8970D75A2ABC529A00F0D087 /* TrackingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D7592ABC529A00F0D087 /* TrackingSession.swift */; };
 		8970D75C2ABC545800F0D087 /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D75B2ABC545800F0D087 /* SessionsView.swift */; };
+		8970D7612ABC612C00F0D087 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D7602ABC612C00F0D087 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8970D7562ABC4E5D00F0D087 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8970D7592ABC529A00F0D087 /* TrackingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSession.swift; sourceTree = "<group>"; };
 		8970D75B2ABC545800F0D087 /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
+		8970D7602ABC612C00F0D087 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +92,10 @@
 		8970D7522ABB816F00F0D087 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8970D75D2ABC5F7700F0D087 /* Sessions */,
 				8970D74E2ABB7B1200F0D087 /* AccelerationSensorView.swift */,
 				8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */,
 				8970D7502ABB812700F0D087 /* AccelerationView.swift */,
-				8970D75B2ABC545800F0D087 /* SessionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,8 +104,17 @@
 			isa = PBXGroup;
 			children = (
 				8970D7592ABC529A00F0D087 /* TrackingSession.swift */,
+				8970D7602ABC612C00F0D087 /* PreviewContainer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8970D75D2ABC5F7700F0D087 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				8970D75B2ABC545800F0D087 /* SessionsView.swift */,
+			);
+			path = Sessions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				8970D74F2ABB7B1200F0D087 /* AccelerationSensorView.swift in Sources */,
 				8970D74D2ABB4C8300F0D087 /* SpeedViewModel.swift in Sources */,
 				8970D73C2ABB495300F0D087 /* ContentView.swift in Sources */,
+				8970D7612ABC612C00F0D087 /* PreviewContainer.swift in Sources */,
 				8970D73A2ABB495300F0D087 /* SnelheidsmeterApp.swift in Sources */,
 				8970D75A2ABC529A00F0D087 /* TrackingSession.swift in Sources */,
 				8970D7512ABB812700F0D087 /* AccelerationView.swift in Sources */,

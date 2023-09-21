@@ -1,6 +1,26 @@
 {
   "sourceLanguage" : "nl",
   "strings" : {
+    "%@ - %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
+    "%@ -> %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ -> %2$@"
+          }
+        }
+      }
+    },
     "km/h" : {
       "localizations" : {
         "en" : {
@@ -10,6 +30,12 @@
           }
         }
       }
+    },
+    "Nog geen sessies" : {
+
+    },
+    "Sessies" : {
+
     },
     "Snelheid" : {
       "localizations" : {

@@ -61,7 +61,7 @@ class SpeedViewModel {
         print("Difference in time: ", timeDifference)
         
         // Difference in speed (m/s)
-        let speedDifference = location1.speed - location2.speed
+        let speedDifference = location2.speed - location1.speed
         print("Difference in speed: ", speedDifference)
         
         // Square root and make the speed difference absolute

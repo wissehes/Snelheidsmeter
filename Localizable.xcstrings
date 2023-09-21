@@ -21,6 +21,26 @@
         }
       }
     },
+    "Start volgen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start tracking"
+          }
+        }
+      }
+    },
+    "Stop volgen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop tracking"
+          }
+        }
+      }
+    },
     "Versnelling" : {
       "localizations" : {
         "en" : {

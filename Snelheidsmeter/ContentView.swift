@@ -48,7 +48,7 @@ struct ContentView: View {
     }
     
     var buttonTitle: String {
-        vm.isMonitoring ? "Stop volgen" : "Start volgen"
+        vm.isMonitoring ? String(localized: "Stop volgen") : String(localized: "Start volgen")
     }
     
     var buttonIcon: String {

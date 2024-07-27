@@ -20,6 +20,7 @@
 		8970D75A2ABC529A00F0D087 /* TrackingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D7592ABC529A00F0D087 /* TrackingSession.swift */; };
 		8970D75C2ABC545800F0D087 /* SessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D75B2ABC545800F0D087 /* SessionsView.swift */; };
 		8970D7612ABC612C00F0D087 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D7602ABC612C00F0D087 /* PreviewContainer.swift */; };
+		89F3A9BC2C550C5A004D785E /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F3A9BB2C550C5A004D785E /* SessionDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8970D7592ABC529A00F0D087 /* TrackingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSession.swift; sourceTree = "<group>"; };
 		8970D75B2ABC545800F0D087 /* SessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsView.swift; sourceTree = "<group>"; };
 		8970D7602ABC612C00F0D087 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		89F3A9BB2C550C5A004D785E /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				8970D75B2ABC545800F0D087 /* SessionsView.swift */,
+				89F3A9BB2C550C5A004D785E /* SessionDetailView.swift */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				8970D7612ABC612C00F0D087 /* PreviewContainer.swift in Sources */,
 				8970D73A2ABB495300F0D087 /* SnelheidsmeterApp.swift in Sources */,
 				8970D75A2ABC529A00F0D087 /* TrackingSession.swift in Sources */,
+				89F3A9BC2C550C5A004D785E /* SessionDetailView.swift in Sources */,
 				8970D7512ABB812700F0D087 /* AccelerationView.swift in Sources */,
 				8970D74B2ABB4BDF00F0D087 /* SpeedView.swift in Sources */,
 				8970D75C2ABC545800F0D087 /* SessionsView.swift in Sources */,
@@ -337,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Snelheidsmeter/Preview Content\"";
-				DEVELOPMENT_TEAM = C4HKS39B24;
+				DEVELOPMENT_TEAM = U3CH3X8GK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Snelheidsmeter heeft toegang nodig tot je locatie om jouw snelheid te kunnen gebruiken";
@@ -368,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Snelheidsmeter/Preview Content\"";
-				DEVELOPMENT_TEAM = C4HKS39B24;
+				DEVELOPMENT_TEAM = U3CH3X8GK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Snelheidsmeter heeft toegang nodig tot je locatie om jouw snelheid te kunnen gebruiken";

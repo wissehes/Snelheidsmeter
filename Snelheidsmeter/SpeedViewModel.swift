@@ -118,7 +118,8 @@ class SpeedViewModel {
                     self.sessionItems.append(.init(
                         speed: location.speed,
                         acceleration: acceleration, 
-                        timestamp: .now
+                        timestamp: .now,
+                        location: location.coordinate
                     ))
                 }
             case .didPaused:

@@ -32,6 +32,16 @@ struct SpeedView: View {
         return formatter.string(from: measurement)
     }
     
+    var speedValue: Double {
+        let measurement = Measurement(value: speed, unit: UnitSpeed.metersPerSecond)
+
+        if showMetersPerSecond {
+            return speed
+        } else {
+            return measurement.converted(to: .kilometersPerHour).value
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 12.5) {
             VStack {
@@ -43,7 +53,7 @@ struct SpeedView: View {
                 showMetersPerSecond.toggle()
             }
             
-            Gauge(value: speed, in: minSpeed...maxSpeed) {
+            Gauge(value: speedValue, in: minSpeed...maxSpeed) {
                 Text("km/h")
             } currentValueLabel: {
                 Text(formattedSpeed)

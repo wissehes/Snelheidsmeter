@@ -24,7 +24,6 @@ struct AccelerationSensorView: View {
             .onAppear {
                 manager.deviceMotionUpdateInterval = 1
                 manager.startDeviceMotionUpdates(to: .current!) { motion, error in
-                    print(error, motion)
                     self.acceleration = motion?.userAcceleration
                 }
             }

@@ -30,7 +30,8 @@ struct SessionDetailView: View {
                 Map {
                     MapPolyline(coordinates: points)
                         .stroke(.blue, lineWidth: 5)
-                }
+                }.frame(height: 400)
+                .listRowInsets(EdgeInsets())
             }
         }.navigationTitle("Session details")
     }

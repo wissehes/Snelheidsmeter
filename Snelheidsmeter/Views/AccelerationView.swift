@@ -23,8 +23,7 @@ struct AccelerationView: View {
     }
     
     var formattedAcceleration: String {
-        guard let acceleration = acceleration else { return "?" }
-        let measurement = Measurement(value: acceleration, unit: UnitAcceleration.metersPerSecondSquared)
+        let measurement = Measurement(value: acceleration ?? 0, unit: UnitAcceleration.metersPerSecondSquared)
         return formatter.string(from: measurement)
     }
     

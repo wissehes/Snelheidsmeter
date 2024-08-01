@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SpeedView: View {
     
+    /// Speed in meters per second
     var speed: Double
     
     @State private var showMetersPerSecond = false
@@ -70,5 +71,5 @@ struct SpeedView: View {
 }
 
 #Preview {
-    SpeedView(speed: 135.50)
+    SpeedView(speed: 100.23441 / 3.6)
 }

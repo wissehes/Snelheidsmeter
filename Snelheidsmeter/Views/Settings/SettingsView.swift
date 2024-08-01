@@ -10,6 +10,8 @@ import Defaults
 
 struct SettingsView: View {
     
+    @Default(.speedDisplay) var speedDisplay
+    
     var body: some View {
         List {
             // Auto start
@@ -24,6 +26,15 @@ struct SettingsView: View {
             // Acceleration
             Section("Acceleration") {
                 Defaults.Toggle("Show acceleration", key: .showAcceleration)
+            }
+            
+            // Speed display
+            Section("Speed display") {
+                Picker("Speed display", selection: $speedDisplay) {
+                    ForEach(SpeedDisplayType.allCases, id: \.rawValue) { item in
+                        Text(item.label).tag(item)
+                    }
+                }
             }
         }.navigationTitle("Settings")
     }

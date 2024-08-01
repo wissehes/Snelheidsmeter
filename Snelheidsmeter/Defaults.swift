@@ -14,4 +14,21 @@ extension Defaults.Keys {
     
     /// If the app should show the acceleration gauge
     static let showAcceleration = Key<Bool>("show-acceleration", default: true)
+    
+    /// The speed display type (m/s or km/h)
+    static let speedDisplay = Key<SpeedDisplayType>("speed-display", default: .kilometersPerHour)
+}
+
+enum SpeedDisplayType: String, Defaults.Serializable, CaseIterable {
+    case metersPerSecond
+    case kilometersPerHour
+    
+    var label: String {
+        switch self {
+        case .metersPerSecond:
+            UnitSpeed.metersPerSecond.symbol.localizedLowercase
+        case .kilometersPerHour:
+            UnitSpeed.kilometersPerHour.symbol.localizedLowercase
+        }
+    }
 }

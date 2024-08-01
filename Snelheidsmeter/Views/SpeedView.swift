@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct SpeedView: View {
     
     /// Speed in meters per second
     var speed: Double
     
-    @State private var showMetersPerSecond = false
+    @Default(.speedDisplay) var speedDisplayType
+    var showMetersPerSecond: Bool {
+        speedDisplayType == .metersPerSecond
+    }
     
     let gradient = Gradient(colors: [.green, .orange, .pink])
     let minSpeed: Double = 0
@@ -51,7 +55,11 @@ struct SpeedView: View {
                 Text(formattedSpeed)
                     .font(.system(.largeTitle, design: .rounded))
             }.onTapGesture {
-                showMetersPerSecond.toggle()
+                if showMetersPerSecond {
+                    speedDisplayType = .kilometersPerHour
+                } else {
+                    speedDisplayType = .metersPerSecond
+                }
             }
             
             Gauge(value: speedValue, in: minSpeed...maxSpeed) {

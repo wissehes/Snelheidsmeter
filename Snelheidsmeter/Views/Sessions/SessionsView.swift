@@ -14,11 +14,15 @@ struct SessionsView: View {
     
     var body: some View {
         List(sessions) { session in
-            
-            VStack(alignment: .leading) {
-                Text("\(session.startDate, style: .date) - \(session.startDate, style: .time)")
-                Text("\(session.startDate, style: .time) -> \(session.endDate ?? Date(), style: .time)")
+            NavigationLink {
+                SessionDetailView(session: session)
+            } label: {
+                VStack(alignment: .leading) {
+                    Text("\(session.startDate, style: .date) - \(session.startDate, style: .time)")
+                    Text("\(session.startDate, style: .time) -> \(session.endDate ?? Date(), style: .time)")
+                }
             }
+
             
         }.navigationTitle("Sessies")
             .overlay {

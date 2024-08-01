@@ -16,14 +16,19 @@ struct SessionDetailView: View {
         session.items.map { $0.location }
     }
     
+    var duration: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth, .month, .year]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .full
+        
+        return formatter.string(from: session.startDate, to: session.endDate ?? .now) ?? "--:--"
+    }
+    
     var body: some View {
         List {
             Section {
-                if let endDate = session.endDate {
-                    Text("Duration: \(session.startDate...endDate)")
-                } else {
-                    Text("Start date: \(session.startDate)")
-                }
+                Text("Duration: \(duration)")
             }
             
             Section("Map") {

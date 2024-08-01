@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8943CFFC2C5B64EB002751A5 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 8943CFFB2C5B64EB002751A5 /* Defaults */; };
+		8943CFFE2C5B64F8002751A5 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943CFFD2C5B64F8002751A5 /* Defaults.swift */; };
+		8943D0012C5B67C7002751A5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943D0002C5B67C7002751A5 /* SettingsView.swift */; };
 		8970D73A2ABB495300F0D087 /* SnelheidsmeterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D7392ABB495300F0D087 /* SnelheidsmeterApp.swift */; };
 		8970D73C2ABB495300F0D087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970D73B2ABB495300F0D087 /* ContentView.swift */; };
 		8970D73E2ABB495600F0D087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8970D73D2ABB495600F0D087 /* Assets.xcassets */; };
@@ -24,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8943CFFD2C5B64F8002751A5 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		8943D0002C5B67C7002751A5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8970D7362ABB495300F0D087 /* Snelheidsmeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snelheidsmeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8970D7392ABB495300F0D087 /* SnelheidsmeterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelheidsmeterApp.swift; sourceTree = "<group>"; };
 		8970D73B2ABB495300F0D087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8943CFFC2C5B64EB002751A5 /* Defaults in Frameworks */,
 				8970D7492ABB4BBB00F0D087 /* AsyncLocationKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8943CFFF2C5B67A2002751A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8943D0002C5B67C7002751A5 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8970D72D2ABB495300F0D087 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +86,7 @@
 		8970D7382ABB495300F0D087 /* Snelheidsmeter */ = {
 			isa = PBXGroup;
 			children = (
+				8943CFFD2C5B64F8002751A5 /* Defaults.swift */,
 				8970D7582ABC51F400F0D087 /* Models */,
 				8970D7522ABB816F00F0D087 /* Views */,
 				8970D7392ABB495300F0D087 /* SnelheidsmeterApp.swift */,
@@ -94,6 +109,7 @@
 		8970D7522ABB816F00F0D087 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8943CFFF2C5B67A2002751A5 /* Settings */,
 				8970D75D2ABC5F7700F0D087 /* Sessions */,
 				8970D74E2ABB7B1200F0D087 /* AccelerationSensorView.swift */,
 				8970D74A2ABB4BDF00F0D087 /* SpeedView.swift */,
@@ -138,6 +154,7 @@
 			name = Snelheidsmeter;
 			packageProductDependencies = (
 				8970D7482ABB4BBB00F0D087 /* AsyncLocationKit */,
+				8943CFFB2C5B64EB002751A5 /* Defaults */,
 			);
 			productName = Snelheidsmeter;
 			productReference = 8970D7362ABB495300F0D087 /* Snelheidsmeter.app */;
@@ -170,6 +187,7 @@
 			mainGroup = 8970D72D2ABB495300F0D087;
 			packageReferences = (
 				8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */,
+				8943CFFA2C5B64EB002751A5 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 8970D7372ABB495300F0D087 /* Products */;
 			projectDirPath = "";
@@ -207,7 +225,9 @@
 				89F3A9BC2C550C5A004D785E /* SessionDetailView.swift in Sources */,
 				8970D7512ABB812700F0D087 /* AccelerationView.swift in Sources */,
 				8970D74B2ABB4BDF00F0D087 /* SpeedView.swift in Sources */,
+				8943D0012C5B67C7002751A5 /* SettingsView.swift in Sources */,
 				8970D75C2ABC545800F0D087 /* SessionsView.swift in Sources */,
+				8943CFFE2C5B64F8002751A5 /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +439,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8943CFFA2C5B64EB002751A5 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AsyncSwift/AsyncLocationKit.git";
@@ -430,6 +458,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8943CFFB2C5B64EB002751A5 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8943CFFA2C5B64EB002751A5 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
 		8970D7482ABB4BBB00F0D087 /* AsyncLocationKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8970D7472ABB4BBB00F0D087 /* XCRemoteSwiftPackageReference "AsyncLocationKit" */;

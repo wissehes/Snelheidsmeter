@@ -41,6 +41,9 @@ struct ContentView: View {
                     Label("Sessies", systemImage: "square.3.layers.3d")
                 }.buttonStyle(.bordered)
             }
+            .onAppear {
+                // TODO: Make auto-start work
+            }
             .padding()
             .navigationTitle("Snelheid")
             .toolbar {

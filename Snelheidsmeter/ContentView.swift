@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct ContentView: View {
     
     @Environment(\.modelContext) private var context
+    @Default(.showAcceleration) var showAcceleration
     
     var vm = SpeedViewModel()
     
@@ -27,7 +29,9 @@ struct ContentView: View {
                 
                 SpeedView(speed: vm.speed)
                 
-                AccelerationView(acceleration: vm.acceleration)
+                if showAcceleration {
+                    AccelerationView(acceleration: vm.acceleration)
+                }
                 
                 controlButton
                 
@@ -39,6 +43,13 @@ struct ContentView: View {
             }
             .padding()
             .navigationTitle("Snelheid")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    NavigationLink(destination: SettingsView.init) {
+                        Label("Settings", systemImage: "gear")
+                    }
+                }
+            }
         }
     }
     
@@ -92,7 +103,9 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: TrackingSession.self)
-        .environment(\.locale, .init(identifier: "nl"))
+    NavigationStack {
+        ContentView()
+            .modelContainer(for: TrackingSession.self)
+            .environment(\.locale, .init(identifier: "nl"))
+    }
 }
